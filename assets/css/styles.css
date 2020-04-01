@@ -3,7 +3,7 @@
 /* ~~~~~~~~~~~~~~ */
 :root {
   --primaryColor: #444444;
-  --secondaryColor: #ffdd67;
+  --secondaryColor: rgb(255, 221, 103);
   --tertiaryColor: #535945;
 }
 
@@ -15,4 +15,106 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) skew(-25deg);
+  display: flex;
+  border: 1rem solid var(--tertiaryColor);
+  box-shadow: 0 2rem 1rem rgba(0, 0, 0, .2);
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  width: 5rem;
+  height: 8rem;
+  background: var(--secondaryColor);
+  font-size: 3em;
+  color: rgba(0, 0, 0, .1);
+  text-align: center;
+  line-height: 8rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 -1px;
+}
+
+ul li::before {
+  content: attr(data-title);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--tertiaryColor);
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    top: -100%;
+  }
+
+  20% {
+    top: 0%;
+    background: transparent;
+    color: var(--tertiaryColor);
+  }
+
+  40% {
+    top: 0%;
+    background: var(--tertiaryColor);
+    color: var(--secondaryColor);
+  }
+
+  60% {
+    top: 0%;
+    background: transparent;
+    color: var(--tertiaryColor);
+  }
+
+  80% {
+    top: -20%;
+    background: transparent;
+    color: var(--tertiaryColor);
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+ul li:nth-child(1)::before {
+  animation-delay: .1s;
+}
+
+ul li:nth-child(2)::before {
+  animation-delay: .2s;
+}
+
+ul li:nth-child(3)::before {
+  animation-delay: .3s;
+}
+
+ul li:nth-child(4)::before {
+  animation-delay: .4s;
+}
+
+ul li:nth-child(5)::before {
+  animation-delay: .5s;
+}
+
+ul li:nth-child(6)::before {
+  animation-delay: .6s;
+}
+
+ul li:nth-child(7)::before {
+  animation-delay: .7s;
+}
+
+ul li:nth-child(8)::before {
+  animation-delay: .8s;
 }
